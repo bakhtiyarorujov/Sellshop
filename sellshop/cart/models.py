@@ -23,7 +23,7 @@ class Cart(models.Model):
 
 class CartItems(models.Model):
     cart = models.ForeignKey(Cart, on_delete=models.CASCADE, related_name='cartitems')
-    product = models.ForeignKey(ProductVersion, on_delete=models.CASCADE, related_name='productcart')
+    product = models.ForeignKey(ProductVersion, on_delete=models.CASCADE, null=True, blank=True, related_name='productcart')
     quantity = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
