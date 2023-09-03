@@ -34,6 +34,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(max_length=50, null=True, blank=True)
     last_name = models.CharField(max_length=50, null=True, blank=True)
     birthday = models.DateField(blank=True, null=True)
+    phone = models.CharField(max_length=20, null=True, blank=True)
     newsletter = models.BooleanField(default=True)
     offers = models.BooleanField(default=True)
     date_joined = models.DateTimeField(auto_now_add=True, null=True, blank=True)
